@@ -21,11 +21,9 @@ def threeSum(nums: list[int], target: int = 0) -> list[list[int]]:
         if i > 0 and nums[i] == nums[i - 1]:
             continue
 
-        # 剪枝1：当前最小三数之和大于 target，后续不可能再有解
         if nums[i] + nums[i + 1] + nums[i + 2] > target:
             break
 
-        # 剪枝2：当前最大三数之和小于 target，跳过当前 i
         if nums[i] + nums[n - 2] + nums[n - 1] < target:
             continue
 
